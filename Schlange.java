@@ -88,11 +88,15 @@ public class Schlange {
   }
 
   /**
-   * Laesst die Schlange um eine Einheit laenger werden.
+   * Laesst die Schlange um X-Einheiten laenger werden.
+   * 
+   * Die Verlängerung hängt dabei von setGoldWert ab.
    */
-  public void wachsen() {
+  public void wachsen(int setGoldWert) {
     Point schwanz = schlange.get(0);
-    schlange.add(0, new Point(schwanz.x, schwanz.y));
+    for (int i=0; setGoldWert >= i;i++){
+       schlange.add(i, new Point(schwanz.x, schwanz.y));
+    }
   }
 
   /**
